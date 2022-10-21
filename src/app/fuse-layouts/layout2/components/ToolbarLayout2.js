@@ -1,5 +1,4 @@
 import FuseSearch from '@fuse/core/FuseSearch';
-import FuseShortcuts from '@fuse/core/FuseShortcuts';
 import AppBar from '@material-ui/core/AppBar';
 import Hidden from '@material-ui/core/Hidden';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
@@ -13,7 +12,6 @@ import { useSelector } from 'react-redux';
 import { selectToolbarTheme } from 'app/store/fuse/settingsSlice';
 import AdjustFontSize from '../../shared-components/AdjustFontSize';
 import FullScreenToggle from '../../shared-components/FullScreenToggle';
-import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -40,15 +38,7 @@ function ToolbarLayout2(props) {
             </Hidden>
           )}
 
-          <div className="flex flex-1">
-            <Hidden mdDown>
-              <FuseShortcuts />
-            </Hidden>
-          </div>
-
           <div className="flex items-center px-8 h-full overflow-x-auto">
-            <LanguageSwitcher />
-
             <AdjustFontSize />
 
             <FullScreenToggle />

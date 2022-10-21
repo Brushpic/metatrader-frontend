@@ -27,7 +27,7 @@ function Navigation(props) {
       layout={props.layout}
       dense={props.dense}
       active={props.active}
-      onItemClick={handleItemClick}
+      onItemClick={handleItemClick()}
     />
   );
 }

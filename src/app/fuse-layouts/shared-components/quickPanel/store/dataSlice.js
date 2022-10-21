@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getData = createAsyncThunk('quickPanel/data/getData', async () => {
-  const response = await axios.get('/api/quick-panel/data');
+  const response = await axios.get('/v1/quick-panel/data');
   const data = await response.data;
 
   return data;
