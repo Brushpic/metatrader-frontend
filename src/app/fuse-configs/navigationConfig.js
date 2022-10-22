@@ -14,6 +14,14 @@ const navigationConfig = [
         icon: 'whatshot',
         url: '/example',
       },
+      {
+        id: 'userAdmin-component',
+        title: 'User Manage',
+        translate: 'UserManage',
+        type: 'item',
+        icon: 'whatshot',
+        url: '/userAdmin',
+      },
     ],
   },
 ];

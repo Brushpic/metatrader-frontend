@@ -113,7 +113,6 @@ const initialState = {
   photoURL: '',
   email: '',
   shortcuts: [],
-
 };
 
 const userSlice = createSlice({
