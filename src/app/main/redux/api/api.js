@@ -11,7 +11,12 @@ Api.interceptors.request.use((req) => {
   return req;
 });
 
-export const getAllUserData = () => Api.get(`/v1/users`);
+export const getAllUserData = () => Api.get(`/v1/users/`);
 export const addNewUser = (userData) => Api.post(`/v1/users/`, userData);
 export const updateUser = (id, userData) => Api.patch(`/v1/users/${id}`, userData);
 export const deleteUser = (id) => Api.delete(`/v1/users/${id}`);
+
+export const getAllCredentialData = () => Api.get(`/v1/credential/`);
+export const addNewCredential = (credentialData) =>
+  Api.post(`/v1/credential/addnew`, credentialData);
+export const deleteCredential = (id) => Api.delete(`/v1/credential/${id}`);

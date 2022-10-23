@@ -137,7 +137,7 @@ function JWTRegisterTab(props) {
                 endAdornment: (
                   <InputAdornment position="end">
                     <Icon className="text-20" color="action">
-                      person
+                      phone_android
                     </Icon>
                   </InputAdornment>
                 ),
@@ -163,7 +163,7 @@ function JWTRegisterTab(props) {
                 endAdornment: (
                   <InputAdornment position="end">
                     <Icon className="text-20" color="action">
-                      person
+                      add_location
                     </Icon>
                   </InputAdornment>
                 ),
@@ -189,33 +189,7 @@ function JWTRegisterTab(props) {
                 endAdornment: (
                   <InputAdornment position="end">
                     <Icon className="text-20" color="action">
-                      person
-                    </Icon>
-                  </InputAdornment>
-                ),
-              }}
-              variant="outlined"
-              required
-            />
-          )}
-        />
-
-        <Controller
-          name="country"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              className="mb-16 mx-20"
-              type="text"
-              label="Country"
-              error={!!errors.country}
-              helperText={errors?.country?.message}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon className="text-20" color="action">
-                      person
+                      add_location
                     </Icon>
                   </InputAdornment>
                 ),
@@ -241,7 +215,33 @@ function JWTRegisterTab(props) {
                 endAdornment: (
                   <InputAdornment position="end">
                     <Icon className="text-20" color="action">
-                      person
+                      add_location
+                    </Icon>
+                  </InputAdornment>
+                ),
+              }}
+              variant="outlined"
+              required
+            />
+          )}
+        />
+
+        <Controller
+          name="country"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              {...field}
+              className="mb-16 mx-20"
+              type="text"
+              label="Country"
+              error={!!errors.country}
+              helperText={errors?.country?.message}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <Icon className="text-20" color="action">
+                      add_location
                     </Icon>
                   </InputAdornment>
                 ),

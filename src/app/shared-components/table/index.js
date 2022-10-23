@@ -1,4 +1,4 @@
-import MaterialTable from 'material-table';
+import MaterialTable from "material-table";
 // import TableViewIcon from '@mui/icons-material/TableView';
 
 const Editable = ({ columns, title, data, editable, options }) => {

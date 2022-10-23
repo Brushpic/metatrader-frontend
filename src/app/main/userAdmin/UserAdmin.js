@@ -19,6 +19,15 @@ const Users = () => {
   const options = {
     actionsColumnIndex: -1,
     tableLayout: "auto",
+    paging: true,
+    pageSize: 10, // make initial page size
+    emptyRowsWhenPaging: false, // To avoid of having empty rows
+    pageSizeOptions: [10, 20, 30, 50], // rows selection options
+    rowStyle: (rowData) => {
+      return {
+        backgroundColor: rowData.status ? "#888" : "#e88",
+      };
+    },
   };
 
   const editable = {
@@ -57,7 +66,7 @@ const Users = () => {
     {
       title: "Role",
       field: "role",
-      lookup: { admin: "admin", user: "user" },
+      lookup: { admin: "Admin", user: "User" },
     },
     { title: "Street", field: "street" },
     { title: "City", field: "city" },
@@ -67,7 +76,13 @@ const Users = () => {
 
   return (
     <Grid>
-      <Editable data={users} title="Users" columns={fields} editable={editable} options={options} />
+      <Editable
+        data={users}
+        title="Users"
+        columns={fields}
+        editable={editable}
+        options={options}
+      />
     </Grid>
   );
 };

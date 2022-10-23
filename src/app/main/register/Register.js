@@ -58,11 +58,13 @@ function Register() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { delay: 0.2 } }}
+              className="flex items-center justify-center"
             >
+              <img className="logo-icon w-48" src="assets/images/logos/fuse.svg" alt="logo" />
               <Typography className="text-16 tracking-widest -mt-8 font-700" color="textSecondary">
                 Minotaurfunding
               </Typography>
-            </motion.div> 
+            </motion.div>
           </CardContent>
 
           <div className="flex flex-col items-center justify-center pb-32">
@@ -72,9 +74,9 @@ function Register() {
                 Login
               </Link>
             </div>
-            <Link className="font-normal mt-8" to="/">
+            {/* <Link className="font-normal mt-8" to="/">
               Back to Dashboard
-            </Link>
+            </Link> */}
           </div>
           <JWTRegisterTab />
         </Card>
