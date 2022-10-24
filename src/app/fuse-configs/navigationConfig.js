@@ -24,8 +24,8 @@ const navigationConfig = [
       },
       {
         id: "credentialAdmin-component",
-        title: "Manage accounts",
-        translate: "UserManage",
+        title: "Manage Credentials",
+        translate: "CredentialManage",
         type: "item",
         icon: "whatshot",
         url: "/credentialAdmin",

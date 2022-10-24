@@ -42,3 +42,40 @@ export const deleteCredential = (id) => async (dispatch) => {
       dispatch(showMessage({ message: error.response.data.message }));
     });
 };
+
+export const createAccount = (data) => async (dispatch) => {
+  dispatch(
+    showMessage({ message: "Please wait until creation completed, it might be take 30 seconds!" })
+  );
+
+  api
+    .createAccount(data)
+    .then((response) => {
+      dispatch(showMessage({ message: "Credential data successfully created!" }));
+      dispatch({ type: credentialAdminConstant.ADD_NEWCREDENTIAL, payload: response.data });
+    })
+    .catch((error) => {
+      dispatch(showMessage({ message: error.response.data.message }));
+    });
+};
+
+export const registeCredential = (data) => async (dispatch) => {
+  const { login, password, serverName, name } = data;
+  api
+    .registeCredential({ login, password, serverName, name })
+    .then(() => {
+      dispatch(showMessage({ message: "Credential data successfully registered!" }));
+      dispatch({ type: credentialAdminConstant.REGISTER_CREDENTIAL, payload: login });
+    })
+    .catch((error) => {
+      dispatch(showMessage({ message: error.response.data.message }));
+    });
+};
+
+export const openCreateAccountDialog = () => async (dispatch) => {
+  dispatch({ type: credentialAdminConstant.OPEN_DIALOG });
+};
+
+export const closeCreateAccountDialog = () => async (dispatch) => {
+  dispatch({ type: credentialAdminConstant.CLOSE_DIALOG });
+};

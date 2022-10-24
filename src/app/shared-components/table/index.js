@@ -1,7 +1,7 @@
 import MaterialTable from "material-table";
 // import TableViewIcon from '@mui/icons-material/TableView';
 
-const Editable = ({ columns, title, data, editable, options }) => {
+const Editable = ({ columns, title, data, editable, options, actions }) => {
   return (
     <MaterialTable
       // icons={}
@@ -10,6 +10,7 @@ const Editable = ({ columns, title, data, editable, options }) => {
       columns={columns}
       data={data}
       editable={editable}
+      actions={actions}
     />
   );
 };
