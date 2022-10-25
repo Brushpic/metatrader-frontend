@@ -28,9 +28,9 @@ function Logo() {
 
   return (
     <div className={clsx(classes.root, 'flex items-center')}>
-      <img className="logo-icon w-24 h-24" src="assets/images/logos/fuse.svg" alt="logo" />
+      <img className="logo-icon w-24 h-24" src="assets/logos/mirador.svg" alt="logo" />
       <Typography className="text-16 leading-none mx-12 font-medium logo-text" color="inherit">
-        MINOTAURFUNDING
+        Mirador Funding
       </Typography>
     </div>
   );

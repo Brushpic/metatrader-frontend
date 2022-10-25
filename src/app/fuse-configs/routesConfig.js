@@ -3,6 +3,7 @@ import FuseUtils from "@fuse/utils";
 import ExampleConfig from "app/main/example/ExampleConfig";
 import UserAdminConfig from "app/main/userAdmin/UserAdminConfig";
 import CredentialAdminConfig from "app/main/credentialAdmin/CredentialAdminConfig";
+import AccountListConfig from "app/main/accountList/AccountListConfig";
 import LoginConfig from "app/main/login/LoginConfig";
 import LogoutConfig from "app/main/logout/LogoutConfig";
 import RegisterConfig from "app/main/register/RegisterConfig";
@@ -16,6 +17,7 @@ const routeConfigs = [
   LogoutConfig,
   UserAdminConfig,
   CredentialAdminConfig,
+  AccountListConfig,
 ];
 
 const routes = [

@@ -60,11 +60,11 @@ function Login() {
               animate={{ opacity: 1, transition: { delay: 0.2 } }}
             >
               <div className="flex items-center mb-48">
-                <img className="logo-icon w-48 filter-green" src="assets/images/logos/fuse.svg" alt="logo" />
+                <img className="logo-icon w-48 filter-green" src="assets/logos/mirador.svg" alt="logo" />
                 <div className="border-l-1 mr-4 w-1 h-40" />
                 <div>
                   <Typography className="text-24 font-semibold logo-text" color="inherit">
-                    Minotaur
+                    Mirador
                   </Typography>
                   <Typography
                     className="text-16 tracking-widest -mt-8 font-700 text-red-600"
@@ -104,7 +104,7 @@ function Login() {
             >
               <Typography variant="h3" color="inherit" className="font-semibold leading-tight">
                 Welcome <br />
-                to the <br /> Minotaurfunding!
+                to the <br /> Mirador Funding!
               </Typography>
             </motion.div>
 

@@ -23,3 +23,6 @@ export const deleteCredential = (id) => Api.delete(`/v1/credential/${id}`);
 
 export const createAccount = (data) => Api.post(`/v1/account/createDemo`, data);
 export const registeCredential = (data) => Api.post(`/v1/account/registerAccount`, data);
+
+export const getAllAccountData = () => Api.get(`/v1/account/`);
+export const getCredentialDetail = (login) => Api.get(`/v1/credential/${login}`);

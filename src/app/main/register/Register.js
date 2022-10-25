@@ -60,9 +60,9 @@ function Register() {
               animate={{ opacity: 1, transition: { delay: 0.2 } }}
               className="flex items-center justify-center"
             >
-              <img className="logo-icon w-48" src="assets/images/logos/fuse.svg" alt="logo" />
-              <Typography className="text-16 tracking-widest -mt-8 font-700" color="textSecondary">
-                Minotaurfunding
+              <img className="logo-icon w-48" src="assets/logos/mirador.svg" alt="logo" />
+              <Typography className="text-28 tracking-widest ml-6 -mt-8 font-700" color="textSecondary">
+                Mirador Funding!
               </Typography>
             </motion.div>
           </CardContent>

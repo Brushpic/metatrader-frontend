@@ -30,6 +30,14 @@ const navigationConfig = [
         icon: "whatshot",
         url: "/credentialAdmin",
       },
+      {
+        id: "accountList-component",
+        title: "Account List",
+        translate: "AccountList",
+        type: "item",
+        icon: "whatshot",
+        url: "/accountList",
+      },
     ],
   },
 ];
