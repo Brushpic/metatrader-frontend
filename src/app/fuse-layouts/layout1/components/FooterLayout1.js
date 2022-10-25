@@ -18,8 +18,9 @@ function FooterLayout1(props) {
         color="default"
         style={{ backgroundColor: footerTheme.palette.background.paper }}
       >
-        <Toolbar className="min-h-48 md:min-h-64 px-8 sm:px-12 py-0 flex items-center overflow-x-auto">
-          <Typography>Footer123</Typography>
+        <Toolbar className="mx-64 flex justify-between min-h-48 md:min-h-64 px-8 sm:px-12 py-0 flex items-center overflow-x-auto">
+          <Typography>Copyright © {new Date().getFullYear} Mirador Funding.</Typography>
+          <Typography>Contact Us:</Typography>
         </Toolbar>
       </AppBar>
     </ThemeProvider>

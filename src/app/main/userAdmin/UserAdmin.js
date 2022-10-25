@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTheme } from "@material-ui/core/styles";
 import { useSelector, useDispatch } from "react-redux";
 import Editable from "app/shared-components/table";
 import {
@@ -10,6 +11,7 @@ import {
 import { Grid } from "@material-ui/core";
 
 const Users = () => {
+  const theme = useTheme();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserList());
@@ -25,7 +27,8 @@ const Users = () => {
     pageSizeOptions: [10, 20, 30, 50], // rows selection options
     rowStyle: (rowData) => {
       return {
-        backgroundColor: rowData.status ? "#888" : "#e88",
+        backgroundColor: rowData.status ? theme.palette.primary.dark : theme.palette.primary[400],
+        color: theme.palette.secondary.light,
       };
     },
   };
@@ -75,14 +78,8 @@ const Users = () => {
   ];
 
   return (
-    <Grid>
-      <Editable
-        data={users}
-        title="Users"
-        columns={fields}
-        editable={editable}
-        options={options}
-      />
+    <Grid className="mt-64">
+      <Editable data={users} title="Users" columns={fields} editable={editable} options={options} />
     </Grid>
   );
 };

@@ -26,3 +26,5 @@ export const registeCredential = (data) => Api.post(`/v1/account/registerAccount
 
 export const getAllAccountData = () => Api.get(`/v1/account/`);
 export const getCredentialDetail = (login) => Api.get(`/v1/credential/${login}`);
+
+export const getMatrixData = (login) => Api.get(`/v1/matrix/${login}`);

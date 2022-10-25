@@ -13,6 +13,7 @@ import { useTheme } from "@material-ui/core/styles";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import history from "@history";
 
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
@@ -59,12 +60,11 @@ function AccountListTable(props) {
     });
   }
 
-  function handleClick(item) {
-    props.history.push(`/matix/${item.id}/${item.handle}`);
+  function handleClick(login) {
+    history.push(`matrix/${login}`);
   }
 
   function handleCredential(event, login) {
-    console.log("login", login);
     event.stopPropagation();
     dispatch(openCredentialAccountDialog(login));
   }
@@ -89,7 +89,7 @@ function AccountListTable(props) {
         className="flex flex-1 items-center justify-center h-full"
       >
         <Typography color="textSecondary" variant="h5">
-          There are no products!
+          There are no accounts to show!
         </Typography>
       </motion.div>
     );
@@ -127,7 +127,7 @@ function AccountListTable(props) {
                     role="checkbox"
                     tabIndex={-1}
                     key={n.id}
-                    onClick={() => handleClick(n)}
+                    onClick={() => handleClick(n.login)}
                   >
                     <TableCell className="p-4 md:p-16" component="th" scope="row">
                       {n.accountName}
@@ -142,8 +142,8 @@ function AccountListTable(props) {
                       <i
                         className={clsx(
                           "inline-block w-8 h-8 rounded mx-8",
-                          n.connectionStatus === "DISCONNECTED" && "bg-red"
-                          // n.connectionStatus === "DISCONNECTED" && "bg-grey"
+                          n.connectionStatus === "DISCONNECTED" && "bg-red",
+                          n.connectionStatus !== "DISCONNECTED" && "bg-blue"
                         )}
                       />
                     </TableCell>

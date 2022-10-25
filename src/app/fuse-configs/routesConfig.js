@@ -1,6 +1,6 @@
 import { Redirect } from "react-router-dom";
 import FuseUtils from "@fuse/utils";
-import ExampleConfig from "app/main/example/ExampleConfig";
+import MatrixConfig from "app/main/matrix/MatrixConfig";
 import UserAdminConfig from "app/main/userAdmin/UserAdminConfig";
 import CredentialAdminConfig from "app/main/credentialAdmin/CredentialAdminConfig";
 import AccountListConfig from "app/main/accountList/AccountListConfig";
@@ -11,7 +11,7 @@ import FuseLoading from "@fuse/core/FuseLoading";
 import Error404Page from "app/main/404/Error404Page";
 
 const routeConfigs = [
-  ExampleConfig,
+  MatrixConfig,
   LoginConfig,
   RegisterConfig,
   LogoutConfig,
@@ -40,6 +40,7 @@ const routes = [
     component: () => <Error404Page />,
   },
   {
+    path: "*",
     component: () => <Redirect to="/404" />,
   },
 ];

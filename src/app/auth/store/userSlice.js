@@ -12,7 +12,7 @@ export const setUserData = (user) => async (dispatch, getState) => {
          */
 
   history.push({
-    pathname: '/example',
+    pathname: '/accountList',
   });
 
   /*
