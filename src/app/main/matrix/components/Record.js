@@ -115,7 +115,7 @@ function Record(props) {
             </TableHead>
             <TableBody className="sticky left-0">
               {record.map((value) => (
-                <TableRow key={value.id} className="h-64">
+                <TableRow key={value.ticket} className="h-64">
                   <TableCell component="th" scope="row">
                     <Typography className="inline text-12 font-700 px-4 py-4 rounded-4">
                       {value.ticket}
