@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useParams } from "react-router-dom";
 import { useDeepCompareEffect } from "@fuse/hooks";
 import { useDispatch, useSelector } from "react-redux";
+import { Grid, Typography } from "@material-ui/core";
+
 import { getMatrix } from "app/main/redux/actions/matrixActions";
 // import { useEffect, useState } from 'react';
 
@@ -22,6 +24,8 @@ function Matrix(props) {
 
   const historyTrade = useSelector(({ userAdmin }) => userAdmin.matrixReducer.historyTrade);
 
+  const { accountInfo } = historyTrade;
+
   console.log("history::", historyTrade);
 
   useDeepCompareEffect(() => {
@@ -35,16 +39,27 @@ function Matrix(props) {
         root: classes.layoutRoot,
       }}
       header={
-        <div className="p-24">
-          <h4>Head</h4>
-        </div>
+        <Grid container className="p-24 flex justify-between items-center w-full">
+          <Grid item className="flex" xs={6}>
+            <Typography variant="h5" className="mr-8">
+              Login:
+            </Typography>
+            <Typography variant="h6">{routeParams.login}</Typography>
+          </Grid>
+          <Grid item className="flex" xs={6}>
+            <Typography variant="h5" className="mr-8">
+              Balance:
+            </Typography>
+            <Typography variant="h6">{accountInfo && accountInfo.balance}</Typography>
+          </Grid>
+        </Grid>
       }
       content={
         <div className="p-24">
-          <Chart />
-          <Objective />
-          <Detail />
-          <Record />
+          <Chart data={historyTrade} />
+          <Objective data={historyTrade} />
+          <Detail data={historyTrade} />
+          <Record data={historyTrade} />
         </div>
       }
     />
