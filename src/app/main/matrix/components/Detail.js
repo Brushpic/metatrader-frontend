@@ -56,9 +56,11 @@ function Detail(props) {
           plusProfit.reduce((total, value) => total + value, 0) / plusProfit.length
         ),
         "Average Loss": floorNumber(loss.reduce((total, value) => total + value, 0) / loss.length),
-        "Average RRR": floorNumber(
-          plusProfit.reduce((total, value) => total + value, 0) /
-            ((loss.reduce((total, value) => total + value, 0) * plusProfit.length) / loss.length)
+        "Average RRR": Math.abs(
+          floorNumber(
+            plusProfit.reduce((total, value) => total + value, 0) /
+              ((loss.reduce((total, value) => total + value, 0) * plusProfit.length) / loss.length)
+          )
         ),
         Expectancy: floorNumber((balance1 - initialBalance) / profit.length),
         "Profit factor": Math.abs(
@@ -108,7 +110,7 @@ function Detail(props) {
 
   console.log("DailyResult:::", dailyResult);
 
-  if (!statics) {
+  if (!dailyResult || !statics) {
     return (
       <div className="p-24">
         <Typography variant="h4">Statistics</Typography>
