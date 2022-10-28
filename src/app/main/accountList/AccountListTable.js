@@ -20,6 +20,7 @@ import { withRouter } from "react-router-dom";
 import FuseLoading from "@fuse/core/FuseLoading";
 import {
   getAccountList,
+  getAllAccountList,
   openCredentialAccountDialog,
 } from "app/main/redux/actions/accountListActions";
 import AccountTableHead from "./AccountTableHead";
@@ -27,6 +28,8 @@ import AccountTableHead from "./AccountTableHead";
 function AccountListTable(props) {
   const dispatch = useDispatch();
   const accounts = useSelector(({ userAdmin }) => userAdmin.accountListReducer.accounts);
+  const user = useSelector(({ auth }) => auth.user);
+  console.log("user:::", user);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(accounts);
   const [page, setPage] = useState(0);
@@ -39,8 +42,11 @@ function AccountListTable(props) {
   const theme = useTheme();
 
   useEffect(() => {
-    dispatch(getAccountList()).then(() => setLoading(false));
-  }, [dispatch]);
+    // eslint-disable-next-line no-unused-expressions
+    user.role === "admin"
+      ? dispatch(getAllAccountList()).then(() => setLoading(false))
+      : dispatch(getAccountList(user.email)).then(() => setLoading(false));
+  }, [dispatch, user]);
 
   useEffect(() => {
     setData(accounts);

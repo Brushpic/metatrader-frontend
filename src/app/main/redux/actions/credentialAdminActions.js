@@ -60,9 +60,9 @@ export const createAccount = (data) => async (dispatch) => {
 };
 
 export const registeCredential = (data) => async (dispatch) => {
-  const { login, password, serverName, name } = data;
+  const { login, password, serverName, name, userEmail } = data;
   api
-    .registeCredential({ login, password, serverName, name })
+    .registeCredential({ login, password, serverName, name, userEmail })
     .then(() => {
       dispatch(showMessage({ message: "Credential data successfully registered!" }));
       dispatch({ type: credentialAdminConstant.REGISTER_CREDENTIAL, payload: login });

@@ -4,7 +4,23 @@ import * as api from "../api/api";
 import * as accountListConstant from "../constant/accountListConstant";
 
 // eslint-disable-next-line import/prefer-default-export
-export const getAccountList = () => async (dispatch) => {
+export const getAccountList = (email) => async (dispatch) => {
+  console.log("action:", email);
+  api
+    .getAccountData(email)
+    .then((response) => {
+      dispatch(showMessage({ message: "Credential data successfully imported!" }));
+      dispatch({
+        type: accountListConstant.GET_ALLACCOUNTS,
+        payload: response.data,
+      });
+    })
+    .catch((error) => {
+      dispatch(showMessage({ message: error.response.data.message }));
+    });
+};
+
+export const getAllAccountList = () => async (dispatch) => {
   api
     .getAllAccountData()
     .then((response) => {
