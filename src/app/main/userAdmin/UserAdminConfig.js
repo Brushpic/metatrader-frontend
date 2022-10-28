@@ -2,6 +2,7 @@ import UserAdmin from "./UserAdmin";
 
 const UserAdminConfig = {
   settings: {
+    role: "admin",
     layout: {
       config: {},
     },

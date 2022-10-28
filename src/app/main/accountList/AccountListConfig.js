@@ -2,6 +2,7 @@ import AccountList from "./AccountList";
 
 const AccountListConfig = {
   settings: {
+    role: "user",
     layout: {
       config: {},
     },

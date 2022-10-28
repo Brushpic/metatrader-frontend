@@ -6,6 +6,7 @@ import React from "react";
 
 const MatrixConfig = {
   settings: {
+    role: "user",
     layout: {
       config: {},
     },

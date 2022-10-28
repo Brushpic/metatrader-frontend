@@ -1,4 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { IconButton, InputAdornment } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -6,7 +7,7 @@ import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -32,6 +33,8 @@ const schema = yup.object().shape({
 function CredentialDialog(props) {
   const dispatch = useDispatch();
   const dialogStatus = useSelector(({ userAdmin }) => userAdmin.accountListReducer.props);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
 
   const { control, watch, reset, handleSubmit, formState, getValues } = useForm({
     mode: "onChange",
@@ -141,11 +144,25 @@ function CredentialDialog(props) {
                 <TextField
                   {...field}
                   className="mb-24"
+                  type="password"
                   label="Password"
                   id="password"
                   variant="outlined"
                   fullWidth
                   disabled
+                  InputProps={{
+                    className: "pr-2",
+                    type: showPassword ? "text" : "password",
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton onClick={() => setShowPassword(!showPassword)}>
+                          <Icon className="text-20" color="action">
+                            {showPassword ? "visibility" : "visibility_off"}
+                          </Icon>
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               )}
             />
@@ -162,11 +179,25 @@ function CredentialDialog(props) {
                 <TextField
                   {...field}
                   className="mb-24"
+                  type="password"
                   label="Investor Password"
                   id="investorPassword"
                   variant="outlined"
                   fullWidth
                   disabled
+                  InputProps={{
+                    className: "pr-2",
+                    type: showPassword1 ? "text" : "password",
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton onClick={() => setShowPassword1(!showPassword1)}>
+                          <Icon className="text-20" color="action">
+                            {showPassword1 ? "visibility" : "visibility_off"}
+                          </Icon>
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               )}
             />

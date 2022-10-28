@@ -2,6 +2,7 @@ import CredentialAdmin from "./CredentialAdmin";
 
 const CredentialAdminConfig = {
   settings: {
+    role: "admin",
     layout: {
       config: {},
     },

@@ -90,7 +90,7 @@ function Onjective(props) {
         },
         maxProfit: {
           value: maxProfit,
-          title: `Profit target ${initialBalance * 0.1}`,
+          title: `Profit target $${initialBalance * 0.1}`,
           passed: maxProfit >= initialBalance * 0.1,
         },
       };

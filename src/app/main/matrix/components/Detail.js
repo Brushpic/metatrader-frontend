@@ -132,8 +132,8 @@ function Detail(props) {
                 {Object.keys(statics)
                   .slice(0, parseInt(Object.keys(statics).length / 2, 10))
                   .map((key) => (
-                    <TableRow key={key} className="h-64">
-                      <TableCell component="th" scope="row">
+                    <TableRow key={key} className="h-72">
+                      <TableCell component="th" className="h-72" scope="row">
                         <Typography className="inline text-12 font-700 px-8 py-4 rounded-4">
                           {key}
                         </Typography>
@@ -152,8 +152,8 @@ function Detail(props) {
                 {Object.keys(statics)
                   .slice(parseInt(Object.keys(statics).length / 2, 10))
                   .map((key) => (
-                    <TableRow key={key} className="h-64">
-                      <TableCell component="th" scope="row">
+                    <TableRow key={key} className="h-72">
+                      <TableCell component="th" className="h-72" scope="row">
                         <Typography className="inline text-12 font-700 px-8 py-4 rounded-4">
                           {key}
                         </Typography>

@@ -1,6 +1,7 @@
 import { createSelector, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import navigationConfig from 'app/fuse-configs/navigationConfig';
 import FuseUtils from '@fuse/utils';
+import i18next from 'i18next';
 import _ from '@lodash';
 
 const navigationAdapter = createEntityAdapter();
@@ -51,11 +52,18 @@ export const { setNavigation, resetNavigation } = navigationSlice.actions;
 const getUserRole = (state) => state.auth.user.role;
 
 export const selectNavigation = createSelector(
-  [selectNavigationAll, ({ i18n }) => i18n, getUserRole],
-  (navigation, userRole) => {
-    return _.merge(
-      [],
-      FuseUtils.filterRecursive(navigation, (item) => FuseUtils.hasPermission(item.auth, userRole))
+  [selectNavigationAll, ({ i18n }) => i18n.language, getUserRole],
+  (navigation, language, userRole) => {
+    console.log("reducer:", navigation, userRole);
+  
+
+    return (
+      _.merge(
+        [],
+        FuseUtils.filterRecursive(navigation, (item) =>
+          FuseUtils.hasPermission(item.auth, userRole)
+        )
+      )
     );
   }
 );

@@ -326,6 +326,7 @@ class FuseUtils {
   }
 
   static hasPermission(authArr, userRole) {
+    console.log("Fuse:::", authArr, userRole);
     /**
      * If auth array is not defined
      * Pass and allow
