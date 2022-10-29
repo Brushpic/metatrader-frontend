@@ -117,7 +117,6 @@ function Onjective(props) {
       <Typography variant="h4">Objective</Typography>
       <div className="container relative pb-16">
         <Grid item xs={12}>
-          <Typography variant="h5">Statistics</Typography>
           <div className="table-responsive flex">
             <Table className="w-1/2 sm:w-full">
               <TableHead className="sticky top-0">
